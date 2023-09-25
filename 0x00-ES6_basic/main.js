@@ -1,5 +1,3 @@
-import getNeighborhoodsList from './2-arrow';
+import concatArrays from './5-spread-operator';
 
-const neighborhoodsList = new getNeighborhoodsList();
-const res = neighborhoodsList.addNeighborhood('Noe Valley');
-console.log(res);
+console.log(concatArrays(['a', 'b'], ['c', 'd'], 'Hello'));
