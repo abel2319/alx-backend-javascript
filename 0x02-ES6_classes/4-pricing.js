@@ -11,15 +11,23 @@ export default class Pricing {
 
   get currency() { return this._currency; }
 
-  set amount(amount) { this._amount = amount; }
+  set amount(amount) {
+    if (typeof amount !== 'number') throw new TypeError('amount must be a number');
+    this._amount = amount;
+  }
 
-  set currency(currency) { this._currency = currency; }
+  set currency(currency) {
+    if (typeof conversionRate !== 'number') throw new TypeError('conversionRate must be a number');
+    this._currency = currency;
+  }
 
   displayFullPrice() {
     return `${this._amount} ${this._currency.displayFullCurrency()}`;
   }
 
-  convertPrice(conversionRate) {
-    return this._amount * conversionRate;
+  static convertPrice(amount, conversionRate) {
+    if (typeof amount !== 'number') throw new TypeError('amount must be a number');
+    if (typeof conversionRate !== 'number') throw new TypeError('conversionRate must be a number');
+    return amount * conversionRate;
   }
 }
