@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import Currency from './3-currency';
 
 export default class Pricing {
@@ -17,7 +16,7 @@ export default class Pricing {
   }
 
   set currency(currency) {
-    if (typeof conversionRate !== 'number') throw new TypeError('conversionRate must be a number');
+    if (!(value instanceof Currency)) throw new TypeError('currency must be a Currency');
     this._currency = currency;
   }
 
