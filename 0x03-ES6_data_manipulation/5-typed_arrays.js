@@ -4,7 +4,8 @@ export default function createInt8TypedArray(length, position, value) {
   if (typeof value !== 'number') { throw new Error('value must be a number'); }
 
   if (position >= length) { throw new Error('Position outside range'); }
-  const ArrayBuffer = new Int8Array();
+  const Buffer = new DataView(new ArrayBuffer(length), 0, length);
+  Buffer.setInt8(position, value);
 
-  return ArrayBuffer;
+  return Buffer;
 }
