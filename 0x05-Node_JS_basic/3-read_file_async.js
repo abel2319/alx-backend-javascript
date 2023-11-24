@@ -23,7 +23,7 @@ async function countStudents(path) {
   });
   console.log(`Number of students in CS: ${csStud.length}. List: ${csStud.join(', ')}`);
   console.log(`Number of students in SWE: ${sweStud.length}. List: ${sweStud.join(', ')}`);
-  return fileContent;
+  return { arr, csStud, sweStud };
 }
 
 module.exports = countStudents;
