@@ -1,10 +1,10 @@
 const express = require('express');
 
 const app = express();
-const port = process.env.PORT || 1245;
+const port = 1245;
 
 app.get('/', (req, res) => {
-  res.set('Content-Type', 'text/html');
+  res.set('Content-Type', 'text/plain');
   res.send('Hello Holberton School!');
 });
 
