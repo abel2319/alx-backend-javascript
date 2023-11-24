@@ -4,7 +4,7 @@ process.stdin.on('readable', () => {
   const line = process.stdin.read();
 
   if (line) {
-    process.stdout.write(`Your nae is: ${line}`);
+    process.stdout.write(`Your name is: ${line}`);
   }
 });
 
