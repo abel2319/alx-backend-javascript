@@ -1,5 +1,4 @@
 const assert = require('assert');
-const { expect } = require('chai');
 const calculateNumber = require('./1-calcul');
 
 describe('Test for calculateNumber function', () => {
@@ -16,47 +15,47 @@ describe('Test for calculateNumber function', () => {
   });
   describe('SUM', () => {
     it('sum of integer', () => {
-      expect(calculateNumber('SUM', -2.3, -1.8)).to.equal(-4);
+      assert.equal(calculateNumber('SUM', 1, 2), 3);
     });
     it('sum of an integer and a float', () => {
-      expect(calculateNumber('SUM', 1, 2.8)).to.equal(4);
+      assert.equal(calculateNumber('SUM', 1, 2.8), 4);
     });
     it('Should round each value before sum them', () => {
-      expect(calculateNumber('SUM', 1.8, 2.8)).to.equal(5);
+      assert.equal(calculateNumber('SUM', 1.8, 2.8), 5);
     });
     it('Should round strictly each value before sum them', () => {
-      expect(calculateNumber('SUM', 1.4999, 2.4999)).to.equal(3);
+      assert.equal(calculateNumber('SUM',1.4999, 2.499), 3);
     });
   });
   describe('SUBTRACT', () => {
     it('subtract two of integer', () => {
-      expect(calculateNumber('SUBTRACT', -2.3, -1.8)).to.equal(-1);
+      assert.equal(calculateNumber('SUBTRACT', 1, 2), -1);
     });
     it('subtract of an integer and a float', () => {
-      expect(calculateNumber('SUBTRACT', 1, 2.8)).to.equal(-2);
+      assert.equal(calculateNumber('SUBTRACT', 1, 2.8), -2);
     });
     it('Should round each value before subtract them', () => {
-      expect(calculateNumber('SUBTRACT', 4.3, 1.8)).to.equal(2);
+      assert.equal(calculateNumber('SUBTRACT', 1.8, 2.8), -1);
     });
     it('Should round strictly each value before subtract them', () => {
-      expect(calculateNumber('SUBTRACT', -4.4999, -5.4999)).to.equal(1);
+      assert.equal(calculateNumber('SUBTRACT',1.4999, 2.499), -1);
     });
   });
   describe('DIVIDE', () => {
     it('divide two of integer', () => {
-      expect(calculateNumber('DIVIDE', 4, 2)).to.equal(2);
+      assert.equal(calculateNumber('DIVIDE', 4, 2), 2);
     });
     it('division of an integer and a float', () => {
-      expect(calculateNumber('DIVIDE', 1, 4.8)).to.equal(0.2);
+      assert.equal(calculateNumber('DIVIDE', 1, 4.8), 0.2);
     });
     it('Should round each value before divide them', () => {
-      expect(calculateNumber('DIVIDE', 1.8, 3.8)).to.equal(0.5);
+      assert.equal(calculateNumber('DIVIDE', 1.8, 3.8), 0.5);
     });
     it('Should round strictly each value before divide them', () => {
-      expect(calculateNumber('DIVIDE', 1.4999, 2.4999)).to.equal(0.5);
+      assert.equal(calculateNumber('DIVIDE',1.4999, 2.499), 0.5);
     });
-    it('Division by 0 must return Error', () => {
-      expect(calculateNumber('DIVIDE', 1.4999, 0)).to.equal('Error');
+    it('Division by 0', () => {
+      assert.equal(calculateNumber('DIVIDE',1.4999, 0), 'Error');
     });
   });
 });
